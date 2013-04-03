@@ -13,3 +13,7 @@
 # rbenv
 .rbenv-gemsets
 .ruby-version
+
+# Simplecov
+/coverage
+
