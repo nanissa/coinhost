@@ -92,6 +92,7 @@ GEM
     minitest (4.3.2)
     multi_json (1.7.2)
     nokogiri (1.5.9)
+    pg (0.15.0)
     polyglot (0.3.3)
     pry (0.9.12)
       coderay (~> 1.0.5)
@@ -188,6 +189,7 @@ DEPENDENCIES
   jbuilder (~> 1.0.1)
   jquery-rails
   launchy
+  pg
   rack-test
   rails (= 4.0.0.beta1)
   rspec-rails
