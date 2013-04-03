@@ -29,7 +29,7 @@ group :test do
   gem 'rspec-rails'
   gem 'rack-test'
   gem 'guard-rspec'
-  gem 'database_cleaner'
+  gem 'database_cleaner', '1.0.0.RC1'
   gem 'factory_girl_rails'
   gem 'capybara', '0.4.1.2'
   gem 'simplecov', :require => false, :group => :test
