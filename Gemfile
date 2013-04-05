@@ -33,6 +33,7 @@ group :test do
   gem 'capybara', '0.4.1.2'
   gem 'simplecov', :require => false, :group => :test
   gem 'launchy'
+  gem 'spork', '~> 1.0rc'
 
   # gem 'spork-rails'
   # gem 'guard-spork'
