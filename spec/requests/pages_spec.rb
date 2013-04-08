@@ -12,3 +12,11 @@ describe 'Render Home Page' do
     page.should have_content 'Looking to purchase Web Hosting with Bitcoin?'
   end
 end
+
+
+describe 'Render TOS' do
+  it 'succeeds' do
+    visit 'pages/tos'
+    page.should have_content 'THE SHORT VERSION'
+  end
+end
