@@ -1,6 +1,7 @@
 RailsApp::Application.routes.draw do
   get 'pages/index'
   get 'pages/tos'
+  get 'pages/why'
 
   root to: 'pages#index'
 
