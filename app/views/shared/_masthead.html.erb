@@ -1,0 +1,22 @@
+<header id="masthead">
+  <hgroup>
+    <%= link_to image_tag( '/images/header.jpg' ), '/' %>
+  </hgroup>
+  <br />
+
+<div class="navbar">
+  <div class="navbar-inner">
+  <ul class="nav">
+    <li class="<%= 'active' if current_page?( root_path )%>">
+      <a href="/">Home</a>
+    </li>
+    <li class="<%= 'active' if current_page?( why_path )%>">
+      <a href="/pages/why">Why CoinHost</a>
+    </li>
+    <li class="<%= 'active' if current_page?( tos_path )%>">
+      <a href="/pages/tos">Terms of Service</a>
+    </li>
+  </ul>
+</div>
+</div>
+</header>
