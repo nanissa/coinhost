@@ -45,10 +45,12 @@ describe 'Nav Bar' do
   end
 end
 
-describe 'Get Started' do
+describe 'Get Started',focus:true do
   before do
+    BlockchainInfo.stub( :payment_address ).and_return'PAYMENT_ADDRESS'
     visit '/get_started'
   end
+
   it 'renders' do
     page.should have_css 'div#get_started'
   end
@@ -56,7 +58,16 @@ describe 'Get Started' do
   it 'has no navbar' do
     page.should_not have_css navbar_css
   end
+
+  it 'has payment address' do
+    page.should have_content BlockchainInfo.payment_address
+  end
+
+  it 'has order id' do
+    page.should have_css "form input[name='order_id'][value='#{ BlockchainInfo.order_id }']"
+  end
 end
+
 
 describe 'gets SEO page' do
   before do
