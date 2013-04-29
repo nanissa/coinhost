@@ -37,10 +37,33 @@ describe 'Why Coinhost?' do
 end
 
 describe 'Nav Bar' do
-  describe '/' do
-    before do
+  before do
+    visit '/'
+  end
+  it 'renders' do
+    page.should have_css 'div.navbar'
+  end
+end
 
-    end
+describe 'Get Started' do
+  before do
+    visit '/get_started'
+  end
+  it 'renders' do
+    page.should have_css 'div#get_started'
+  end
 
+  it 'has no navbar' do
+    page.should_not have_css navbar_css
+  end
+end
+
+describe 'gets SEO page' do
+  before do
+    visit '/bitcoin-getting-ready-to-pop/'
+  end
+
+  it 'renders' do
+    page.should have_css 'div.seo_page'
   end
 end

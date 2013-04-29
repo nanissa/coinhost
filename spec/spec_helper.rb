@@ -1,7 +1,5 @@
 require 'rubygems'
 require 'spork'
-#uncomment the following line to use spork with the debugger
-#require 'spork/ext/ruby-debug'
 
 
 Spork.prefork do
@@ -60,8 +58,7 @@ Spork.each_run do
       DatabaseCleaner.clean
     end
 
-    # config.include RequestHelpers, :type => :request
-    # config.include( MailerHelpers )
+    config.include RequestHelpers
   end
 end
 

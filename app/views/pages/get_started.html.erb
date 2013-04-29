@@ -1,0 +1,19 @@
+<div id='get_started'>
+  <h1>Get Started</h1>
+    Step 1: Enter your <strong><em>free</em></strong><em></em> domain name and account info.<br /><br />
+
+    <form id="order_form" action='/process_order.php' method="post">
+      <input type='hidden' name='order_id' value='<ORDER_ID>' />
+      <input type='hidden' name='payment_address' value='<PAYMENT_ADDRESS>' />
+
+      <label>Domain Name to Register:</label><input type="text" name="domain" />
+      <span style='font-size:12px'>Check to see if your domain is available <a href="http://who.is/" title="Check to see if your domain is available" target="_blank">here</a>.<br /></span>
+
+      <input type="checkbox" name="use_existing_domain" value='1' style='float:left'/><label style='float:left;margin-left:15px;'>I already have a domain name that I would like to use with this hosting account.</label><br /><br />
+
+      <label>Your Current Email:</label><input type="text" name="email" /><br /><br />
+
+      Step 2: Send payment of <b>0.1 BTC</b> to <PAYMENT_ADDRESS><br /> 
+      Click <input type="submit" value="Continue" />
+    </form>
+</div>

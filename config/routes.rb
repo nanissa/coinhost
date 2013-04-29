@@ -1,9 +1,13 @@
 RailsApp::Application.routes.draw do
   get 'pages/index'
-  get 'pages/tos', as: :tos
-  get 'pages/why', as: :why
+  get 'pages/tos',    as: :tos
+  get 'pages/why',    as: :why
+  get 'bitcoin-getting-ready-to-pop/' => 'pages#bitcoin_getting_ready_to_pop'
+  get 'get_started' => 'pages#get_started',  as: :get_started
 
   root to: 'pages#index'
+
+  get 'pages/seo/bitcoin-getting-ready-to-pop' => 'pages#render'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
