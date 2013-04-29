@@ -10,6 +10,7 @@ guard 'rspec' do
   # Rails
   watch(%r{^app/(.+)\.rb$})                           { |m| "spec/#{m[1]}_spec.rb" }
   watch(%r{^app/(.*)(\.erb|\.haml)$})                 { |m| "spec/#{m[1]}#{m[2]}_spec.rb" }
+  watch('app/models/order.rb')                        { 'spec' }
   watch(%r{^app/views/(.*)(\.erb|\.haml)$})           { |m| "spec/requests/#{ m[1].split('/').first }_spec.rb" }
   watch(%r{^spec/support/(.+)\.rb$})                  { "spec" }
   watch('app/controllers/pages_controller.rb' )       { "spec" }
