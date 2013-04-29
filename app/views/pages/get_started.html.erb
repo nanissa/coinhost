@@ -2,9 +2,10 @@
   <h1>Get Started</h1>
     Step 1: Enter your <strong><em>free</em></strong><em></em> domain name and account info.<br /><br />
 
-    <form id="order_form" action='/process_order.php' method="post">
+    <form id="order_form" action='/process_order' method="post">
       <input type='hidden' name='order_id' value='<%= @order_id %>' />
-      <input type='hidden' name='payment_address' value='<PAYMENT_ADDRESS>' />
+      <input type='hidden' name='payment_address' value='<%= @payment_address %>' />
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
 
       <label>Domain Name to Register:</label><input type="text" name="domain" />
       <span style='font-size:12px'>Check to see if your domain is available <a href="http://who.is/" title="Check to see if your domain is available" target="_blank">here</a>.<br /></span>
