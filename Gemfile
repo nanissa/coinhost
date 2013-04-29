@@ -15,6 +15,7 @@ end
 
 group :test, :development do
   gem 'sqlite3'
+  gem 'awesome_print'
 end
 
 # Gems used only for assets and not required
