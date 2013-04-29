@@ -17,3 +17,5 @@
 # Simplecov
 /coverage
 
+# Pesky mac files
+.DS_Store
