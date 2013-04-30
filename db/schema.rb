@@ -11,12 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130429044302) do
+ActiveRecord::Schema.define(version: 20130429125203) do
 
-  create_table "orders", force: true do |t|
+  create_table "orders", id: false, force: true do |t|
+    t.integer  "id",                  limit: 8
     t.string   "domain"
     t.string   "email"
     t.boolean  "use_existing_domain"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "payments", force: true do |t|
+    t.integer  "order_id",         limit: 8
+    t.integer  "satoshi",          limit: 8
+    t.string   "transaction_hash"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

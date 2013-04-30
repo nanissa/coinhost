@@ -36,6 +36,7 @@ describe 'Why Coinhost?' do
   end
 end
 
+
 describe 'Nav Bar' do
   before do
     visit '/'
@@ -82,6 +83,8 @@ end
 
 
 describe 'Process Valid Order' do
+  let( :last_order ){ Order.all.sort.last }
+
   before do
     get_started
   end
@@ -99,7 +102,7 @@ describe 'Process Valid Order' do
   end
 
   it 'has order id' do
-    page.should have_content Order.last.id.to_s
+    page.should have_content last_order.id.to_s
   end
 
   it 'has email' do
@@ -111,12 +114,12 @@ describe 'Process Valid Order' do
   end
   
   it 'saves use existing domain' do
-    Order.last.use_existing_domain.should be_true
+    last_order.use_existing_domain.should be_true
   end
 end
 
 
-describe 'Order Missing' do
+describe 'Invalid Order Missing' do
   describe 'order id' do
     before do
       Order.stub( :generate_order_id ).and_return
@@ -152,8 +155,15 @@ describe 'Order Missing' do
         should have_content 'There was a problem with your order. Please go back and try again.'
     end
   end
+end
 
 
+describe 'Process Payment' do
+  it 'Saves' do
+    expect {
+      process_payment
+    }.to change{ Payment.count }.by 1
+  end
 end
 
 

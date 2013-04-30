@@ -12,6 +12,14 @@ class PagesController < ApplicationController
     render 'process_order_error' if @order.invalid?
   end
 
+
+  def process_payment
+    logger.info "#{ __method__ } params: #{ params }"
+    Payment.process params
+    render nothing:true
+  end
+
+
   def bitcoin_getting_ready_to_pop
     render 'pages/seo/bitcoin_getting_ready_to_pop', layout: false
   end
