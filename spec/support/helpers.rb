@@ -11,6 +11,7 @@ module RequestHelpers
     let( :transaction_hash ){ 'abcde12345'                        }
     let( :payment_params   ){{ value:value, order_id:order_id     , 
                                transaction_hash:transaction_hash  ,
+                               destination_address:CONFIG[ 'PAYMENT_ADDRESS' ],
                                secret:ENV[ 'SECRET' ]            }}
 
     before do

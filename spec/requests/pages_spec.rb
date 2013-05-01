@@ -164,6 +164,28 @@ describe 'Process Payment' do
       process_payment
     }.to change{ Payment.count }.by 1
   end
+
+  context 'without secret' do
+    before do
+      payment_params.delete :secret
+    end
+    it 'fails' do
+      expect {
+        process_payment
+      }.to_not change{ Payment.count }
+    end
+  end
+
+  context 'different payment address' do
+    before do
+      payment_params[ :destination_address ] = 'another_address'
+    end
+    it 'fails' do
+      expect {
+        process_payment
+      }.to_not change{ Payment.count }
+    end
+  end
 end
 
 

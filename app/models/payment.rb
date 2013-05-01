@@ -3,7 +3,7 @@ class Payment < ActiveRecord::Base
 
   def self.process params
     return unless params[ 'secret' ] == ENV[ 'SECRET' ]
-    return unless params[ 'destination_address' ] == ENV[ 'PAYMENT_ADDRESS' ]
+    return unless params[ 'destination_address' ] == CONFIG[ 'PAYMENT_ADDRESS' ]
 
     self.create_for params
   end
