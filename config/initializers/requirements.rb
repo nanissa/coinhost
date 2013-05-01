@@ -1,6 +1,7 @@
-if ENV[ 'SECRET' ].length < 5
+ap ENV[ 'SECRET' ]
+if ENV[ 'SECRET' ].nil? || ENV[ 'SECRET' ].length < 5
   begin
-    raise "\nSECRET not set properly. App start aborted.\n\n" 
+    raise "\n\nSECRET not set properly. App start aborted.\n\n" 
   rescue => err
     err.set_backtrace([])
     fail

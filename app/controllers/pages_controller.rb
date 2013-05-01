@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  skip_before_filter :verify_authenticity_token, only: :process_payment
 
   def get_started
     @order_id = Order.generate_order_id
