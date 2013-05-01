@@ -4,7 +4,7 @@ RailsApp::Application.routes.draw do
   get  'pages/why',    as: :why
   get  'get_started'     => 'pages#get_started',  as: :get_started
   post 'process_order'   => 'pages#process_order'
-  post 'process_payment' => 'pages#process_payment'
+  get  'process_payment' => 'pages#process_payment'
 
   get 'bitcoin-getting-ready-to-pop/' => 'pages#bitcoin_getting_ready_to_pop'
 

@@ -30,5 +30,5 @@ def get_started
 end
 
 def process_payment
-  post '/process_payment', payment_params
+  get '/process_payment', payment_params
 end
