@@ -8,6 +8,7 @@ gem 'jbuilder', '~> 1.0.1'
 gem 'thin'
 gem 'less-rails'
 gem 'therubyracer'
+gem 'awesome_print'
 
 group :production do
   gem 'pg'
@@ -15,7 +16,6 @@ end
 
 group :test, :development do
   gem 'sqlite3'
-  gem 'awesome_print'
 end
 
 # Gems used only for assets and not required
