@@ -7,6 +7,7 @@ RailsApp::Application.routes.draw do
   get  'process_payment' => 'pages#process_payment'
 
   get 'bitcoin-getting-ready-to-pop/' => 'pages#bitcoin_getting_ready_to_pop'
+  get '/images/static/' => redirect( 'public/images/static/' )
 
   root to: 'pages#index'
 
