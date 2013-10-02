@@ -1,28 +1,22 @@
-== README
+== Welcome to CoinHost
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+CoinHost is an Rails based Shared Hosting payment system. It takes payment only in Bitcoin. 
 
-Things you may want to cover:
+This service was designed to take payment for Shared Hosting. However, it can be used for taking payment for any product or service.
 
-* Ruby version
+Although CoinHost was designed for shared hosting, it does **not** provide hosting service. If you want to sell hosting services, I suggest getting a reseller account at Bluehost.
 
-* System dependencies
+CoinHost can be deployed on Heroku or any Rails server. It uses PostgreSQL.
 
-* Configuration
+Note: 2 tests will fail until you set your payment address.
 
-* Database creation
+Currently, there is no Admin section. So you must look in the database to see orders and payments.
 
-* Database initialization
+== Getting Started
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+1. Download the source
+1. Change the views, pages and routes to appropriate content.
+2. Set your PAYMENT\_ADDRESS in app/models/blockchain_info.rb and config/initializers/config.rb
+3. Add you SECRET to the server environment. This is used to authenticate the payment responses.
+4. Run tests: rspec
+4. Deploy.
